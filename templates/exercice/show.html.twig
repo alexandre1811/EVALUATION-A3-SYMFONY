@@ -3,5 +3,12 @@
 {% block title %}Hello{% endblock %}
 
 {% block body %}
-
+    <h1>{{ exercice.name }}</h1>
+    {{ exercice.language }}
+    {{ exercice.description }}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="col-4">
+        {{ form(maj) }}
+    </div>
+    {% endif %}
 {% endblock %}

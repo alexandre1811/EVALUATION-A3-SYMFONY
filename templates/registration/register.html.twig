@@ -8,14 +8,19 @@
     {% endfor %}
 
     <h1>Register</h1>
-
+<div class="col-4">
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
+    {{ form_row(registrationForm.email) }}
+    {{ form_row(registrationForm.plainPassword, {
+        label: 'Password'
+    }) }}
+    {{ form_row(registrationForm.language) }}
+    <div class="">
         {{ form_row(registrationForm.agreeTerms) }}
+    </div>
 
-        <button type="submit" class="btn">Register</button>
+    <button type="submit" class="btn btn-lg my-3 btn-primary">Register</button>
     {{ form_end(registrationForm) }}
+</div>
+
 {% endblock %}

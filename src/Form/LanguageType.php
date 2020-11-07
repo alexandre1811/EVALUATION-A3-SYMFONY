@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Language;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,7 @@ class LanguageType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('users')
+            ->add('Sauvegarder', SubmitType::class)
         ;
     }
 

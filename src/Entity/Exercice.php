@@ -22,6 +22,17 @@ class Exercice
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Language::class, inversedBy="exercices")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $language;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +46,30 @@ class Exercice
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getLanguage(): ?Language
+    {
+        return $this->language;
+    }
+
+    public function setLanguage(?Language $language): self
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

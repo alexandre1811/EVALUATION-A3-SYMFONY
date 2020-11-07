@@ -17,4 +17,7 @@
         <li>Your template at <code><a href="{{ '/home/alexandre/Documents/DevWeb/A3/cours-symfony/eval/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
     </ul>
 </div>
+    {% if app.user %}
+        Bienvenue {{ app.user.email }}
+    {% endif %}
 {% endblock %}
